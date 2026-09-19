@@ -1,13 +1,13 @@
 <?php
 
-namespace RankForge\Tests\Feature;
+namespace Eamirgh\RankForge\Tests\Feature;
 
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
-use RankForge\Facades\RankForge;
-use RankForge\Sitemap\SitemapManager;
-use RankForge\Sitemap\SitemapUrl;
-use RankForge\Tests\TestCase;
+use Eamirgh\RankForge\Facades\RankForge;
+use Eamirgh\RankForge\Sitemap\SitemapManager;
+use Eamirgh\RankForge\Sitemap\SitemapUrl;
+use Eamirgh\RankForge\Tests\TestCase;
 
 class Phase6HttpAndCommandsTest extends TestCase
 {

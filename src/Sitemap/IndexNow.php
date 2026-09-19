@@ -1,6 +1,6 @@
 <?php
 
-namespace RankForge\Sitemap;
+namespace Eamirgh\RankForge\Sitemap;
 
 use Illuminate\Support\Facades\Http;
 use InvalidArgumentException;

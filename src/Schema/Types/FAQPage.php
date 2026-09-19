@@ -1,6 +1,6 @@
 <?php
 
-namespace RankForge\Schema\Types;
+namespace Eamirgh\RankForge\Schema\Types;
 
 class FAQPage extends AbstractType
 {

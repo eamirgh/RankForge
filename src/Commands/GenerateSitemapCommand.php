@@ -1,9 +1,9 @@
 <?php
 
-namespace RankForge\Commands;
+namespace Eamirgh\RankForge\Commands;
 
 use Illuminate\Console\Command;
-use RankForge\Sitemap\SitemapManager;
+use Eamirgh\RankForge\Sitemap\SitemapManager;
 
 class GenerateSitemapCommand extends Command
 {

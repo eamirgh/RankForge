@@ -1,9 +1,9 @@
 <?php
 
-namespace RankForge\Schema;
+namespace Eamirgh\RankForge\Schema;
 
-use RankForge\RankForgeManager;
-use RankForge\Schema\Types\AbstractType;
+use Eamirgh\RankForge\RankForgeManager;
+use Eamirgh\RankForge\Schema\Types\AbstractType;
 
 class SchemaManager
 {

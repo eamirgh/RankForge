@@ -1,12 +1,12 @@
 <?php
 
-namespace RankForge\Tests\Unit;
+namespace Eamirgh\RankForge\Tests\Unit;
 
 use DateTimeImmutable;
-use RankForge\Facades\RankForge;
-use RankForge\RankForgeManager;
-use RankForge\Schema\Types\Article;
-use RankForge\Tests\TestCase;
+use Eamirgh\RankForge\Facades\RankForge;
+use Eamirgh\RankForge\RankForgeManager;
+use Eamirgh\RankForge\Schema\Types\Article;
+use Eamirgh\RankForge\Tests\TestCase;
 
 class Phase2MetaTagsTest extends TestCase
 {

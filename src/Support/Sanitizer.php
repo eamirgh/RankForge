@@ -1,6 +1,6 @@
 <?php
 
-namespace RankForge\Support;
+namespace Eamirgh\RankForge\Support;
 
 class Sanitizer
 {

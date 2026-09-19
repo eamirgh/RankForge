@@ -1,13 +1,13 @@
 <?php
 
-namespace RankForge\Facades;
+namespace Eamirgh\RankForge\Facades;
 
 use DateTimeInterface;
 use Illuminate\Support\Facades\Facade;
-use RankForge\RankForgeManager;
-use RankForge\Schema\Graph;
-use RankForge\Schema\SchemaManager;
-use RankForge\Schema\Types\AbstractType;
+use Eamirgh\RankForge\RankForgeManager;
+use Eamirgh\RankForge\Schema\Graph;
+use Eamirgh\RankForge\Schema\SchemaManager;
+use Eamirgh\RankForge\Schema\Types\AbstractType;
 
 /**
  * @method static RankForgeManager title(string $title)

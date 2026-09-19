@@ -1,10 +1,10 @@
 <?php
 
-namespace RankForge\Commands;
+namespace Eamirgh\RankForge\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Http;
-use RankForge\Sitemap\IndexNow;
+use Eamirgh\RankForge\Sitemap\IndexNow;
 
 class PingSitemapCommand extends Command
 {

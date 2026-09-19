@@ -1,20 +1,20 @@
 <?php
 
-namespace RankForge;
+namespace Eamirgh\RankForge;
 
 use DateTimeInterface;
 use JsonSerializable;
-use RankForge\Crawlers\LlmsTxtManager;
-use RankForge\Crawlers\RobotsTxtManager;
-use RankForge\Meta\MetaTagsRenderer;
-use RankForge\Meta\OpenGraphRenderer;
-use RankForge\Meta\TwitterCardRenderer;
-use RankForge\Schema\Graph;
-use RankForge\Schema\SchemaManager;
-use RankForge\Schema\Types\AbstractType;
-use RankForge\Sitemap\IndexNow;
-use RankForge\Sitemap\SitemapManager;
-use RankForge\Support\Sanitizer;
+use Eamirgh\RankForge\Crawlers\LlmsTxtManager;
+use Eamirgh\RankForge\Crawlers\RobotsTxtManager;
+use Eamirgh\RankForge\Meta\MetaTagsRenderer;
+use Eamirgh\RankForge\Meta\OpenGraphRenderer;
+use Eamirgh\RankForge\Meta\TwitterCardRenderer;
+use Eamirgh\RankForge\Schema\Graph;
+use Eamirgh\RankForge\Schema\SchemaManager;
+use Eamirgh\RankForge\Schema\Types\AbstractType;
+use Eamirgh\RankForge\Sitemap\IndexNow;
+use Eamirgh\RankForge\Sitemap\SitemapManager;
+use Eamirgh\RankForge\Support\Sanitizer;
 
 class RankForgeManager implements JsonSerializable
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace RankForge\Schema\Types;
+namespace Eamirgh\RankForge\Schema\Types;
 
 use DateTimeInterface;
 use JsonSerializable;
-use RankForge\Schema\Graph;
+use Eamirgh\RankForge\Schema\Graph;
 
 abstract class AbstractType implements JsonSerializable
 {

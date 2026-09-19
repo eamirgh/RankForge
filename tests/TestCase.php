@@ -1,9 +1,9 @@
 <?php
 
-namespace RankForge\Tests;
+namespace Eamirgh\RankForge\Tests;
 
 use Orchestra\Testbench\TestCase as Orchestra;
-use RankForge\RankForgeServiceProvider;
+use Eamirgh\RankForge\RankForgeServiceProvider;
 
 abstract class TestCase extends Orchestra
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace RankForge\Tests\Unit;
+namespace Eamirgh\RankForge\Tests\Unit;
 
-use RankForge\Crawlers\LlmsTxtManager;
-use RankForge\Crawlers\RobotsTxtManager;
-use RankForge\Crawlers\Transformers\ContentTransformer;
-use RankForge\Facades\RankForge;
-use RankForge\Tests\TestCase;
+use Eamirgh\RankForge\Crawlers\LlmsTxtManager;
+use Eamirgh\RankForge\Crawlers\RobotsTxtManager;
+use Eamirgh\RankForge\Crawlers\Transformers\ContentTransformer;
+use Eamirgh\RankForge\Facades\RankForge;
+use Eamirgh\RankForge\Tests\TestCase;
 
 class Phase5CrawlerFilesTest extends TestCase
 {

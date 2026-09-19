@@ -1,9 +1,9 @@
 <?php
 
-namespace RankForge\Commands;
+namespace Eamirgh\RankForge\Commands;
 
 use Illuminate\Console\Command;
-use RankForge\Schema\Types\WebSite;
+use Eamirgh\RankForge\Schema\Types\WebSite;
 
 class HealthCheckCommand extends Command
 {

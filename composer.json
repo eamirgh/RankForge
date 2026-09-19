@@ -1,5 +1,5 @@
 {
-    "name": "rankforge/rankforge",
+    "name": "eamirgh/rankforge",
     "description": "Enterprise-grade SEO & GEO engine for Laravel — meta tags, JSON-LD, sitemaps, robots.txt, and llms.txt",
     "keywords": ["laravel", "seo", "meta-tags", "json-ld", "sitemap", "robots-txt", "llms-txt", "open-graph", "structured-data", "geo"],
     "license": "MIT",
@@ -21,21 +21,21 @@
     },
     "autoload": {
         "psr-4": {
-            "RankForge\\": "src/"
+            "Eamirgh\\RankForge\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "RankForge\\Tests\\": "tests/"
+            "Eamirgh\\RankForge\\Tests\\": "tests/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "RankForge\\RankForgeServiceProvider"
+                "Eamirgh\\RankForge\\RankForgeServiceProvider"
             ],
             "aliases": {
-                "RankForge": "RankForge\\Facades\\RankForge"
+                "RankForge": "Eamirgh\\RankForge\\Facades\\RankForge"
             }
         }
     },

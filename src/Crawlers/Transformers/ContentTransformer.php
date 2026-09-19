@@ -1,6 +1,6 @@
 <?php
 
-namespace RankForge\Crawlers\Transformers;
+namespace Eamirgh\RankForge\Crawlers\Transformers;
 
 class ContentTransformer
 {

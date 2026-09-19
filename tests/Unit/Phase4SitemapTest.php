@@ -1,19 +1,19 @@
 <?php
 
-namespace RankForge\Tests\Unit;
+namespace Eamirgh\RankForge\Tests\Unit;
 
 use DateTimeImmutable;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
 use InvalidArgumentException;
-use RankForge\Facades\RankForge;
-use RankForge\Sitemap\Contracts\SitemapSource;
-use RankForge\Sitemap\IndexNow;
-use RankForge\Sitemap\SitemapIndex;
-use RankForge\Sitemap\SitemapManager;
-use RankForge\Sitemap\SitemapUrl;
-use RankForge\Tests\TestCase;
+use Eamirgh\RankForge\Facades\RankForge;
+use Eamirgh\RankForge\Sitemap\Contracts\SitemapSource;
+use Eamirgh\RankForge\Sitemap\IndexNow;
+use Eamirgh\RankForge\Sitemap\SitemapIndex;
+use Eamirgh\RankForge\Sitemap\SitemapManager;
+use Eamirgh\RankForge\Sitemap\SitemapUrl;
+use Eamirgh\RankForge\Tests\TestCase;
 
 class Phase4SitemapTest extends TestCase
 {

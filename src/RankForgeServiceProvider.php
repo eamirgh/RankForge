@@ -1,18 +1,18 @@
 <?php
 
-namespace RankForge;
+namespace Eamirgh\RankForge;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
-use RankForge\Commands\GenerateLlmsCommand;
-use RankForge\Commands\GenerateSitemapCommand;
-use RankForge\Commands\HealthCheckCommand;
-use RankForge\Commands\InstallCommand;
-use RankForge\Commands\PingSitemapCommand;
-use RankForge\Crawlers\LlmsTxtManager;
-use RankForge\Crawlers\RobotsTxtManager;
-use RankForge\Sitemap\IndexNow;
-use RankForge\Sitemap\SitemapManager;
+use Eamirgh\RankForge\Commands\GenerateLlmsCommand;
+use Eamirgh\RankForge\Commands\GenerateSitemapCommand;
+use Eamirgh\RankForge\Commands\HealthCheckCommand;
+use Eamirgh\RankForge\Commands\InstallCommand;
+use Eamirgh\RankForge\Commands\PingSitemapCommand;
+use Eamirgh\RankForge\Crawlers\LlmsTxtManager;
+use Eamirgh\RankForge\Crawlers\RobotsTxtManager;
+use Eamirgh\RankForge\Sitemap\IndexNow;
+use Eamirgh\RankForge\Sitemap\SitemapManager;
 
 class RankForgeServiceProvider extends ServiceProvider
 {

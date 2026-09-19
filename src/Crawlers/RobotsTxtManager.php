@@ -1,6 +1,6 @@
 <?php
 
-namespace RankForge\Crawlers;
+namespace Eamirgh\RankForge\Crawlers;
 
 class RobotsTxtManager
 {

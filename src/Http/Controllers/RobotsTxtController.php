@@ -1,10 +1,10 @@
 <?php
 
-namespace RankForge\Http\Controllers;
+namespace Eamirgh\RankForge\Http\Controllers;
 
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
-use RankForge\Crawlers\RobotsTxtManager;
+use Eamirgh\RankForge\Crawlers\RobotsTxtManager;
 
 class RobotsTxtController extends Controller
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace RankForge\Schema\Concerns;
+namespace Eamirgh\RankForge\Schema\Concerns;
 
-use RankForge\Schema\Graph;
-use RankForge\Schema\Types\AbstractType;
-use RankForge\Schema\Types\Article;
+use Eamirgh\RankForge\Schema\Graph;
+use Eamirgh\RankForge\Schema\Types\AbstractType;
+use Eamirgh\RankForge\Schema\Types\Article;
 
 trait HasJsonLd
 {

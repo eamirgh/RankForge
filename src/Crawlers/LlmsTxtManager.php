@@ -1,8 +1,8 @@
 <?php
 
-namespace RankForge\Crawlers;
+namespace Eamirgh\RankForge\Crawlers;
 
-use RankForge\Crawlers\Transformers\ContentTransformer;
+use Eamirgh\RankForge\Crawlers\Transformers\ContentTransformer;
 
 class LlmsTxtManager
 {

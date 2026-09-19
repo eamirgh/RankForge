@@ -1,9 +1,9 @@
 <?php
 
-namespace RankForge\Meta;
+namespace Eamirgh\RankForge\Meta;
 
-use RankForge\RankForgeManager;
-use RankForge\Support\Sanitizer;
+use Eamirgh\RankForge\RankForgeManager;
+use Eamirgh\RankForge\Support\Sanitizer;
 
 class OpenGraphRenderer
 {

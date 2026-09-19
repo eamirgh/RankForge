@@ -1,9 +1,9 @@
 <?php
 
-namespace RankForge\Commands;
+namespace Eamirgh\RankForge\Commands;
 
 use Illuminate\Console\Command;
-use RankForge\Crawlers\LlmsTxtManager;
+use Eamirgh\RankForge\Crawlers\LlmsTxtManager;
 
 class GenerateLlmsCommand extends Command
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace RankForge\Sitemap\Contracts;
+namespace Eamirgh\RankForge\Sitemap\Contracts;
 
 interface SitemapSource
 {

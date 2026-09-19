@@ -1,9 +1,9 @@
 <?php
 
-namespace RankForge\Schema;
+namespace Eamirgh\RankForge\Schema;
 
 use JsonSerializable;
-use RankForge\Schema\Types\AbstractType;
+use Eamirgh\RankForge\Schema\Types\AbstractType;
 
 class Graph implements JsonSerializable
 {

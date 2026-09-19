@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use RankForge\Http\Controllers\LlmsTxtController;
-use RankForge\Http\Controllers\RobotsTxtController;
-use RankForge\Http\Controllers\SitemapController;
+use Eamirgh\RankForge\Http\Controllers\LlmsTxtController;
+use Eamirgh\RankForge\Http\Controllers\RobotsTxtController;
+use Eamirgh\RankForge\Http\Controllers\SitemapController;
 
 /*
 |--------------------------------------------------------------------------

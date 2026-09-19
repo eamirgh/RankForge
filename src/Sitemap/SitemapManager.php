@@ -1,6 +1,6 @@
 <?php
 
-namespace RankForge\Sitemap;
+namespace Eamirgh\RankForge\Sitemap;
 
 use Closure;
 use DateTimeInterface;
@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\LazyCollection;
 use InvalidArgumentException;
-use RankForge\Sitemap\Contracts\SitemapSource;
+use Eamirgh\RankForge\Sitemap\Contracts\SitemapSource;
 
 class SitemapManager
 {

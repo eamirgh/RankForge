@@ -1,24 +1,24 @@
 <?php
 
-namespace RankForge\Tests\Unit;
+namespace Eamirgh\RankForge\Tests\Unit;
 
 use DateTimeImmutable;
-use RankForge\RankForgeManager;
-use RankForge\Schema\Concerns\HasJsonLd;
-use RankForge\Schema\Graph;
-use RankForge\Schema\Types\Article;
-use RankForge\Schema\Types\BlogPosting;
-use RankForge\Schema\Types\BreadcrumbList;
-use RankForge\Schema\Types\FAQPage;
-use RankForge\Schema\Types\HowTo;
-use RankForge\Schema\Types\LocalBusiness;
-use RankForge\Schema\Types\NewsArticle;
-use RankForge\Schema\Types\Offer;
-use RankForge\Schema\Types\Organization;
-use RankForge\Schema\Types\Product;
-use RankForge\Schema\Types\SoftwareApplication;
-use RankForge\Schema\Types\WebSite;
-use RankForge\Tests\TestCase;
+use Eamirgh\RankForge\RankForgeManager;
+use Eamirgh\RankForge\Schema\Concerns\HasJsonLd;
+use Eamirgh\RankForge\Schema\Graph;
+use Eamirgh\RankForge\Schema\Types\Article;
+use Eamirgh\RankForge\Schema\Types\BlogPosting;
+use Eamirgh\RankForge\Schema\Types\BreadcrumbList;
+use Eamirgh\RankForge\Schema\Types\FAQPage;
+use Eamirgh\RankForge\Schema\Types\HowTo;
+use Eamirgh\RankForge\Schema\Types\LocalBusiness;
+use Eamirgh\RankForge\Schema\Types\NewsArticle;
+use Eamirgh\RankForge\Schema\Types\Offer;
+use Eamirgh\RankForge\Schema\Types\Organization;
+use Eamirgh\RankForge\Schema\Types\Product;
+use Eamirgh\RankForge\Schema\Types\SoftwareApplication;
+use Eamirgh\RankForge\Schema\Types\WebSite;
+use Eamirgh\RankForge\Tests\TestCase;
 
 class Phase3JsonLdTest extends TestCase
 {
@@ -181,7 +181,7 @@ class Phase3JsonLdTest extends TestCase
             ->totalTime('PT5M')
             ->supply(['Composer', 'PHP 8.2+'])
             ->tool(['Terminal'])
-            ->addStep('Require Package', 'Run composer require rankforge/rankforge', 'https://example.com/step1');
+            ->addStep('Require Package', 'Run composer require eamirgh/rankforge', 'https://example.com/step1');
 
         $array = $howTo->toArray();
         $this->assertEquals('HowTo', $array['@type']);

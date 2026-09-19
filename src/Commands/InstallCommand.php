@@ -1,6 +1,6 @@
 <?php
 
-namespace RankForge\Commands;
+namespace Eamirgh\RankForge\Commands;
 
 use Illuminate\Console\Command;
 
