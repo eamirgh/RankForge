@@ -67,6 +67,7 @@ class McpServerTest extends TestCase
         $this->assertContains('get_sitemap', $toolNames);
         $this->assertContains('inspect_html_meta', $toolNames);
         $this->assertContains('submit_indexnow', $toolNames);
+        $this->assertContains('get_skill_md', $toolNames);
     }
 
     public function test_it_executes_check_seo_health_tool(): void
@@ -159,6 +160,23 @@ class McpServerTest extends TestCase
         $this->assertEquals('summary_large_image', $data['twitter']['twitter:card']);
     }
 
+    public function test_it_executes_get_skill_md_tool(): void
+    {
+        $response = $this->server->handleRequest([
+            'jsonrpc' => '2.0',
+            'id' => 77,
+            'method' => 'tools/call',
+            'params' => [
+                'name' => 'get_skill_md',
+                'arguments' => [],
+            ],
+        ]);
+
+        $this->assertArrayHasKey('result', $response);
+        $content = $response['result']['content'][0]['text'];
+        $this->assertStringContainsString('Skill: rankforge', $content);
+    }
+
     public function test_it_lists_available_resources(): void
     {
         $response = $this->server->handleRequest([
@@ -175,6 +193,7 @@ class McpServerTest extends TestCase
         $this->assertContains('rankforge://llms-full.txt', $uris);
         $this->assertContains('rankforge://robots.txt', $uris);
         $this->assertContains('rankforge://sitemap.xml', $uris);
+        $this->assertContains('rankforge://skill.md', $uris);
     }
 
     public function test_it_reads_resource(): void

@@ -74,6 +74,7 @@ class RankForgeServiceProvider extends ServiceProvider
                 GenerateLlmsCommand::class,
                 HealthCheckCommand::class,
                 \Eamirgh\RankForge\Commands\McpCommand::class,
+                \Eamirgh\RankForge\Commands\PublishSkillCommand::class,
             ]);
         }
     }

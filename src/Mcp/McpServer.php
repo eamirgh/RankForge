@@ -189,6 +189,14 @@ class McpServer
                     ],
                 ],
                 [
+                    'name' => 'get_skill_md',
+                    'description' => 'Retrieve the RankForge Agent Skill (SKILL.md) guidelines and code patterns.',
+                    'inputSchema' => [
+                        'type' => 'object',
+                        'properties' => (object) [],
+                    ],
+                ],
+                [
                     'name' => 'submit_indexnow',
                     'description' => 'Submit URL(s) to the IndexNow protocol for instant search engine indexing (Bing, Yandex).',
                     'inputSchema' => [
@@ -223,6 +231,7 @@ class McpServer
             'get_sitemap' => $this->toolGetSitemap($arguments),
             'inspect_html_meta' => $this->toolInspectHtmlMeta($arguments),
             'submit_indexnow' => $this->toolSubmitIndexNow($arguments),
+            'get_skill_md' => $this->toolGetSkillMd(),
             default => throw new McpException("Unknown tool: {$name}", -32601),
         };
 
@@ -367,6 +376,12 @@ class McpServer
      * @param  array<string, mixed>  $args
      * @return array<string, mixed>
      */
+    protected function toolGetSkillMd(): string
+    {
+        $path = __DIR__.'/../../SKILL.md';
+        return file_exists($path) ? (string) file_get_contents($path) : '';
+    }
+
     protected function toolSubmitIndexNow(array $args): array
     {
         $urls = $args['urls'] ?? [];
@@ -407,6 +422,12 @@ class McpServer
                     'name' => 'robots.txt',
                     'description' => 'The active robots.txt directives including traditional and AI crawler rules.',
                     'mimeType' => 'text/plain',
+                ],
+                [
+                    'uri' => 'rankforge://skill.md',
+                    'name' => 'skill.md',
+                    'description' => 'The RankForge agent skill instructions and guidelines.',
+                    'mimeType' => 'text/markdown',
                 ],
                 [
                     'uri' => 'rankforge://sitemap.xml',
@@ -451,6 +472,15 @@ class McpServer
                         'uri' => $uri,
                         'mimeType' => 'text/plain',
                         'text' => RankForge::robotsTxt()->render(),
+                    ],
+                ],
+            ],
+            'rankforge://skill.md' => [
+                'contents' => [
+                    [
+                        'uri' => $uri,
+                        'mimeType' => 'text/markdown',
+                        'text' => $this->toolGetSkillMd(),
                     ],
                 ],
             ],

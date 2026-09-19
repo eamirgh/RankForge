@@ -10,6 +10,9 @@ install: ## Install composer and npm dependencies
 test: ## Run the complete Pest test suite
 	./vendor/bin/pest
 
+test-coverage: ## Run Pest test suite with code coverage
+	./vendor/bin/pest --coverage
+
 test-unit: ## Run only unit tests
 	./vendor/bin/pest tests/Unit
 
@@ -21,6 +24,9 @@ benchmark: ## Run the local performance benchmark suite
 
 mcp: ## Start the RankForge MCP server over stdio
 	php artisan rankforge:mcp
+
+skill: ## Publish the RankForge agent skill (SKILL.md)
+	php artisan rankforge:skill
 
 docs-dev: ## Start VitePress documentation development server
 	npm run docs:dev

@@ -72,6 +72,7 @@ AI agents can execute the following tools via RankForge:
 | `get_robots_txt` | Returns the active `robots.txt` configuration, including environment locks and bot directives. | None |
 | `get_sitemap` | Returns the root XML sitemap index or a specific chunked sitemap section. | `section` (string, optional), `page` (int, optional) |
 | `inspect_html_meta` | Parses and audits SEO metadata (title, description, canonical, robots, OG, Twitter) from raw HTML content. | `html` (string, required) |
+| `get_skill_md` | Returns the complete RankForge Agent Skill (`SKILL.md`) instructions and code patterns. | None |
 | `submit_indexnow` | Submits URL(s) to the IndexNow protocol for instant indexing across Bing and Yandex. | `urls` (array of strings, required) |
 
 ---
@@ -86,6 +87,7 @@ RankForge exposes live context resources to LLMs:
 | `rankforge://llms-full.txt` | `text/markdown` | Comprehensive unpaginated documentation bundle for LLM context windows |
 | `rankforge://robots.txt` | `text/plain` | The active `robots.txt` directives |
 | `rankforge://sitemap.xml` | `application/xml` | The root XML sitemap index |
+| `rankforge://skill.md` | `text/markdown` | The RankForge agent skill instructions and guidelines |
 
 ---
 

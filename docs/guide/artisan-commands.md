@@ -14,6 +14,18 @@ php artisan rankforge:install
 
 ---
 
+## `rankforge:skill`
+
+Publishes the RankForge AI Agent Skill (`SKILL.md`) to `.agents/skills/rankforge/SKILL.md` (or a custom path):
+
+```bash
+php artisan rankforge:skill
+# or custom path:
+php artisan rankforge:skill --path=.skills/rankforge/SKILL.md
+```
+
+---
+
 ## `rankforge:sitemap:generate`
 
 Pre-renders static XML sitemap files to public disk storage:

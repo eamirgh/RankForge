@@ -11,6 +11,7 @@
 <p align="center">
   <a href="https://packagist.org/packages/eamirgh/rankforge"><img src="https://img.shields.io/packagist/v/eamirgh/rankforge.svg?style=flat-square" alt="Latest Version on Packagist"></a>
   <a href="https://github.com/eamirgh/rankforge/actions/workflows/tests.yml"><img src="https://img.shields.io/github/actions/workflow/status/eamirgh/rankforge/tests.yml?branch=main&label=tests&style=flat-square" alt="Tests Status"></a>
+  <a href="https://codecov.io/gh/eamirgh/rankforge"><img src="https://img.shields.io/codecov/c/github/eamirgh/rankforge/main.svg?style=flat-square" alt="Coverage Status"></a>
   <a href="https://packagist.org/packages/eamirgh/rankforge"><img src="https://img.shields.io/packagist/dt/eamirgh/rankforge.svg?style=flat-square" alt="Total Downloads"></a>
   <a href="https://packagist.org/packages/eamirgh/rankforge"><img src="https://img.shields.io/packagist/php-v/eamirgh/rankforge.svg?style=flat-square" alt="PHP Version"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="License"></a>
