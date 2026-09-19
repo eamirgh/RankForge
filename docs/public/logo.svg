@@ -1,5 +1,98 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
-  <rect width="100" height="100" rx="20" fill="#3B82F6"/>
-  <path d="M30 75V25L50 45L70 25V75" stroke="white" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="50" cy="65" r="5" fill="#10B981"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="none" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="rf-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="50%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#090D16"/>
+    </linearGradient>
+
+    <!-- Border Stroke Gradient -->
+    <linearGradient id="rf-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#6366F1" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#10B981" stop-opacity="0.6"/>
+    </linearGradient>
+
+    <!-- Forge Flame / Anvil Core Gradient -->
+    <linearGradient id="rf-forge-grad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="50%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+
+    <!-- Rising Rank Arrow / Peak Gradient -->
+    <linearGradient id="rf-rank-grad" x1="50%" y1="100%" x2="50%" y2="0%">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="50%" stop-color="#34D399"/>
+      <stop offset="100%" stop-color="#6EE7B7"/>
+    </linearGradient>
+
+    <!-- Amber Spark Gradient -->
+    <linearGradient id="rf-spark-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047"/>
+      <stop offset="50%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#EF4444"/>
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="rf-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <!-- Soft Ambient Glow Filter -->
+    <filter id="rf-ambient-glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="12" result="blur"/>
+    </filter>
+  </defs>
+
+  <!-- Base Rounded Shield Container -->
+  <rect x="8" y="8" width="240" height="240" rx="54" fill="url(#rf-bg)"/>
+  <rect x="8" y="8" width="240" height="240" rx="54" stroke="url(#rf-border)" stroke-width="2.5" fill="none"/>
+
+  <!-- Ambient Glow Behind Forge Peak -->
+  <circle cx="128" cy="115" r="45" fill="#10B981" opacity="0.18" filter="url(#rf-ambient-glow)"/>
+  <circle cx="128" cy="145" r="35" fill="#3B82F6" opacity="0.15" filter="url(#rf-ambient-glow)"/>
+
+  <!-- 1. The Forge Anvil Base (Craftsmanship, Strength, Foundation) -->
+  <!-- Anvil Base & Body -->
+  <path d="M68 186C78 186 86 182 92 174L104 158H152L164 174C170 182 178 186 188 186H196C200.418 186 204 189.582 204 194C204 198.418 200.418 202 196 202H60C55.5817 202 52 198.418 52 194C52 189.582 55.5817 186 60 186H68Z" 
+        fill="#334155" opacity="0.9"/>
+  <path d="M72 186H184L172 170C168 165 162 162 155 162H101C94 162 88 165 84 170L72 186Z" 
+        fill="#475569" opacity="0.6"/>
+
+  <!-- 2. The Rank Engine: Ascending Data Bars forming an Anvil + Chevron -->
+  <!-- Bar 1 (Left - Foundation Rank) -->
+  <rect x="74" y="118" width="24" height="38" rx="6" fill="url(#rf-forge-grad)" opacity="0.75"/>
+  
+  <!-- Bar 2 (Right - Mid Rank) -->
+  <rect x="158" y="104" width="24" height="52" rx="6" fill="url(#rf-forge-grad)" opacity="0.75"/>
+
+  <!-- Center Rising Peak / Arrow (#1 Rank Apex) -->
+  <g filter="url(#rf-glow)">
+    <!-- Central Tower Bar -->
+    <rect x="116" y="86" width="24" height="70" rx="6" fill="url(#rf-rank-grad)"/>
+
+    <!-- Dynamic Rank Upward Chevron / Arrow -->
+    <path d="M128 44L168 84C171.314 87.3137 171.314 92.6863 168 96C164.686 99.3137 159.314 99.3137 156 96L128 68L100 96C96.6863 99.3137 91.3137 99.3137 88 96C84.6863 92.6863 84.6863 87.3137 88 84L128 44Z" 
+          fill="url(#rf-rank-grad)"/>
+  </g>
+
+  <!-- 3. The Forge Spark / Search Lens Focal Point -->
+  <!-- Search / Insight Ring -->
+  <circle cx="128" cy="116" r="14" stroke="#FDE047" stroke-width="3.5" fill="none" opacity="0.95" filter="url(#rf-glow)"/>
+  
+  <!-- Glowing Center Spark (AI Synthesis & Discovery) -->
+  <circle cx="128" cy="116" r="5.5" fill="url(#rf-spark-grad)" filter="url(#rf-glow)"/>
+
+  <!-- 4. Structural Code Accent Brackets < / > (HTML & JSON-LD Structured Data) -->
+  <!-- Left Code Bracket < -->
+  <path d="M46 112L36 126L46 140" stroke="#38BDF8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+  <!-- Right Code Bracket > -->
+  <path d="M210 112L220 126L210 140" stroke="#38BDF8" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+
+  <!-- Top Star Sparkle at Apex (Search Excellence / #1 Rank) -->
+  <path d="M128 32L130.5 38.5L137 41L130.5 43.5L128 50L125.5 43.5L119 41L125.5 38.5L128 32Z" 
+        fill="#FDE047" filter="url(#rf-glow)"/>
 </svg>

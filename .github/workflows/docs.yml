@@ -45,7 +45,7 @@ jobs:
 
       - name: Build with VitePress
         env:
-          BASE_PATH: ${{ steps.pages.outputs.base_path || '/rankforge/' }}
+          BASE_PATH: ${{ steps.pages.outputs.base_path || '/RankForge/' }}
         run: npm run docs:build
 
       - name: Ensure .nojekyll exists

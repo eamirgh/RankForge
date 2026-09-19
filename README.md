@@ -12,6 +12,7 @@
   <a href="https://packagist.org/packages/eamirgh/rankforge"><img src="https://img.shields.io/packagist/v/eamirgh/rankforge.svg?style=flat-square" alt="Latest Version on Packagist"></a>
   <a href="https://github.com/eamirgh/rankforge/actions/workflows/tests.yml"><img src="https://img.shields.io/github/actions/workflow/status/eamirgh/rankforge/tests.yml?branch=main&label=tests&style=flat-square" alt="Tests Status"></a>
   <a href="https://codecov.io/gh/eamirgh/rankforge"><img src="https://img.shields.io/codecov/c/github/eamirgh/rankforge/main.svg?style=flat-square" alt="Coverage Status"></a>
+  <a href="https://eamirgh.github.io/RankForge"><img src="https://img.shields.io/badge/docs-eamirgh.github.io%2FRankForge-blue.svg?style=flat-square" alt="Documentation"></a>
   <a href="https://packagist.org/packages/eamirgh/rankforge"><img src="https://img.shields.io/packagist/dt/eamirgh/rankforge.svg?style=flat-square" alt="Total Downloads"></a>
   <a href="https://packagist.org/packages/eamirgh/rankforge"><img src="https://img.shields.io/packagist/php-v/eamirgh/rankforge.svg?style=flat-square" alt="PHP Version"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="License"></a>
@@ -452,13 +453,19 @@ const { props } = usePage();
 
 Measured on PHP 8.4:
 
-| Operation | Throughput | Average Latency | Peak Memory |
+| Benchmark Feature | Throughput | Average Latency | Peak Memory |
 |---|---|---|---|
-| **Meta Tags Rendering (`renderHead`)** | **~8,500 ops/sec** | 0.11 ms/op | 2.00 MB |
-| **JSON-LD `@graph` Serialization** | **~80,000 ops/sec** | 0.01 ms/op | ~0.00 MB |
-| **50,000 URL XML Sitemap Generation** | **~120,000 URLs/sec** | 0.42 s (14.5 MB XML) | 35.1 MB |
-| **HTML to Markdown (`ContentTransformer`)** | **~35,000 ops/sec** | 0.02 ms/op | 14.5 MB |
-| **Headless Serialization (`toArray` / `toJson`)** | **~7,500 ops/sec** | 0.13 ms/op | 14.5 MB |
+| **Meta Tags Rendering (`renderHead`)** | **~7,000 ops/sec** | 0.15 ms/op | 2.00 MB |
+| **JSON-LD `@graph` Serialization** | **~55,000 ops/sec** | 0.02 ms/op | ~0.00 MB |
+| **BreadcrumbList URL Parsing** | **~95,000 ops/sec** | 0.01 ms/op | ~0.00 MB |
+| **50,000 URL XML Sitemap Generation** | **~105,000 URLs/sec** | 0.48 s (14.5 MB XML) | 35.1 MB |
+| **Canonical URL Filtering (Wildcards & Whitelist)** | **~120,000 ops/sec** | 0.008 ms/op | 14.5 MB |
+| **Robots.txt Rule Engine (Multi-Agent & AI Bots)** | **~72,000 ops/sec** | 0.014 ms/op | 14.5 MB |
+| **LLMs.txt & LLMs-Full.txt Compilation (GEO)** | **~58,000 ops/sec** | 0.017 ms/op | 14.5 MB |
+| **HTML to Markdown (`ContentTransformer`)** | **~34,000 ops/sec** | 0.030 ms/op | 14.5 MB |
+| **Eloquent Model Integration (`forModel`)** | **~4,500 ops/sec** | 0.23 ms/op | 14.5 MB |
+| **Headless Serialization (`toArray` / `toJson`)** | **~7,700 ops/sec** | 0.13 ms/op | 14.5 MB |
+| **Model Context Protocol (MCP) JSON-RPC Handling** | **~230,000 ops/sec** | 0.004 ms/op | 14.5 MB |
 
 Run benchmarks locally:
 ```bash
@@ -469,7 +476,7 @@ make benchmark
 
 ## Testing
 
-RankForge is covered by 145+ automated tests and 540+ assertions across PHP 8.2, 8.3, 8.4 and Laravel 11, 12, 13:
+RankForge is covered by 148+ automated tests and 558+ assertions across PHP 8.2, 8.3, 8.4 and Laravel 11, 12, 13:
 
 ```bash
 make test
@@ -481,7 +488,7 @@ make test
 
 ## Documentation
 
-Full interactive documentation is available at [eamirgh.github.io/rankforge](https://eamirgh.github.io/rankforge).
+Full interactive documentation is available at [eamirgh.github.io/RankForge](https://eamirgh.github.io/RankForge).
 
 To run documentation locally:
 ```bash
