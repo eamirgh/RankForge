@@ -82,4 +82,30 @@ class DescriptionAndKeywordsTest extends TestCase
         $this->assertStringContainsString('<meta name="description" content="Page description">', $html);
         $this->assertStringContainsString('<meta name="keywords" content="keyword1, keyword2">', $html);
     }
+
+    public function test_it_detects_description_warnings_for_short_and_long_descriptions(): void
+    {
+        $manager = new RankForgeManager([
+            'description' => [
+                'max_length' => 160,
+            ],
+        ]);
+
+        // Valid length (e.g. 80 chars)
+        $manager->description(str_repeat('a', 80));
+        $this->assertFalse($manager->hasDescriptionWarning());
+        $this->assertNull($manager->getDescriptionWarning());
+
+        // Too short (< 50 chars)
+        $manager->description('Too short');
+        $this->assertFalse($manager->hasDescriptionWarning()); // hasDescriptionWarning is only for > max_length
+        $this->assertNotNull($manager->getDescriptionWarning());
+        $this->assertStringContainsString('50', $manager->getDescriptionWarning());
+
+        // Too long (> 160 chars)
+        $manager->description(str_repeat('b', 161));
+        $this->assertTrue($manager->hasDescriptionWarning());
+        $this->assertNotNull($manager->getDescriptionWarning());
+        $this->assertStringContainsString('160', $manager->getDescriptionWarning());
+    }
 }

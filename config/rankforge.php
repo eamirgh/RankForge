@@ -86,6 +86,7 @@ return [
     'canonical' => [
         'enabled' => true,
         'trailing_slash' => false,
+        'whitelist_query_params' => [],
         'strip_query_params' => [
             'utm_source',
             'utm_medium',

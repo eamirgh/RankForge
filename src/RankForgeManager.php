@@ -90,6 +90,26 @@ class RankForgeManager implements JsonSerializable
         return $this->title;
     }
 
+    public function hasTitleWarning(): bool
+    {
+        $maxLength = (int) $this->configGet('title.max_length', 60);
+
+        return $this->title !== null && mb_strlen($this->title, 'UTF-8') > $maxLength;
+    }
+
+    public function getTitleWarning(): ?string
+    {
+        $maxLength = (int) $this->configGet('title.max_length', 60);
+
+        if ($this->hasTitleWarning()) {
+            $length = mb_strlen((string) $this->title, 'UTF-8');
+
+            return "Title exceeds recommended limit of {$maxLength} characters (current: {$length}).";
+        }
+
+        return null;
+    }
+
     /**
      * Build the final rendered title string using the configured template.
      */
@@ -135,6 +155,32 @@ class RankForgeManager implements JsonSerializable
         $maxLength = (int) $this->configGet('description.max_length', 160);
 
         return Sanitizer::text($description, $maxLength);
+    }
+
+    public function hasDescriptionWarning(): bool
+    {
+        $maxLength = (int) $this->configGet('description.max_length', 160);
+
+        return $this->description !== null && mb_strlen($this->description, 'UTF-8') > $maxLength;
+    }
+
+    public function getDescriptionWarning(): ?string
+    {
+        $maxLength = (int) $this->configGet('description.max_length', 160);
+
+        if ($this->hasDescriptionWarning()) {
+            $length = mb_strlen((string) $this->description, 'UTF-8');
+
+            return "Description exceeds recommended limit of {$maxLength} characters (current: {$length}).";
+        }
+
+        if ($this->description !== null && $this->description !== '' && mb_strlen($this->description, 'UTF-8') < 50) {
+            $length = mb_strlen($this->description, 'UTF-8');
+
+            return "Description is shorter than recommended minimum of 50 characters (current: {$length}).";
+        }
+
+        return null;
     }
 
     // -------------------------------------------------------------------------
@@ -295,9 +341,10 @@ class RankForgeManager implements JsonSerializable
         $url = $this->canonicalUrl ?? (function_exists('request') ? request()->url() : '/');
 
         $stripParams = (array) $this->configGet('canonical.strip_query_params', []);
+        $whitelistParams = (array) $this->configGet('canonical.whitelist_query_params', []);
 
-        if ($stripParams !== []) {
-            $url = Sanitizer::stripQueryParams($url, $stripParams);
+        if ($whitelistParams !== [] || $stripParams !== []) {
+            $url = Sanitizer::filterQueryParams($url, $stripParams, $whitelistParams);
         }
 
         $trailingSlash = (bool) $this->configGet('canonical.trailing_slash', false);

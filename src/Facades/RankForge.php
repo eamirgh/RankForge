@@ -12,9 +12,13 @@ use Eamirgh\RankForge\Schema\Types\AbstractType;
 /**
  * @method static RankForgeManager title(string $title)
  * @method static ?string getTitle()
+ * @method static ?string getTitleWarning()
+ * @method static bool hasTitleWarning()
  * @method static string getRenderedTitle()
  * @method static RankForgeManager description(string $description)
  * @method static string getDescription()
+ * @method static ?string getDescriptionWarning()
+ * @method static bool hasDescriptionWarning()
  * @method static RankForgeManager keywords(array|string $keywords)
  * @method static array getKeywords()
  * @method static string getKeywordsString()

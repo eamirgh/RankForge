@@ -5,6 +5,7 @@ namespace Eamirgh\RankForge;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Eamirgh\RankForge\Commands\GenerateLlmsCommand;
+use Eamirgh\RankForge\Commands\GenerateRobotsCommand;
 use Eamirgh\RankForge\Commands\GenerateSitemapCommand;
 use Eamirgh\RankForge\Commands\HealthCheckCommand;
 use Eamirgh\RankForge\Commands\InstallCommand;
@@ -68,6 +69,7 @@ class RankForgeServiceProvider extends ServiceProvider
             $this->commands([
                 InstallCommand::class,
                 GenerateSitemapCommand::class,
+                GenerateRobotsCommand::class,
                 PingSitemapCommand::class,
                 GenerateLlmsCommand::class,
                 HealthCheckCommand::class,

@@ -76,4 +76,48 @@ class LlmsTxtManagerTest extends TestCase
     {
         $this->assertInstanceOf(LlmsTxtManager::class, RankForge::llmsTxt());
     }
+
+    public function test_it_scans_directory_for_markdown_files(): void
+    {
+        $tempDir = sys_get_temp_dir().'/llms-scan-test-'.uniqid();
+        mkdir($tempDir.'/nested', 0755, true);
+
+        // File 1: Has heading and paragraph
+        file_put_contents(
+            $tempDir.'/intro.md',
+            "# Introduction to RankForge\n\nThis is the introductory guide for RankForge.\n\nMore info here."
+        );
+
+        // File 2: Has no heading (uses filename), has frontmatter
+        file_put_contents(
+            $tempDir.'/nested/configuration.markdown',
+            "---\ntitle: Meta Config\n---\n\nConfigure your application settings easily.\n\nDetails below."
+        );
+
+        // File 3: Non-markdown file (should be ignored)
+        file_put_contents($tempDir.'/nested/ignored.txt', 'Ignored content');
+
+        $manager = new LlmsTxtManager();
+        $manager->addDirectory($tempDir, 'https://example.com/docs', 'Documentation');
+
+        $rendered = $manager->render();
+        $this->assertStringContainsString('## Documentation', $rendered);
+        $this->assertStringContainsString('- [Introduction to RankForge](https://example.com/docs/intro.md): This is the introductory guide for RankForge.', $rendered);
+        $this->assertStringContainsString('- [configuration](https://example.com/docs/nested/configuration.markdown): Configure your application settings easily.', $rendered);
+        $this->assertStringNotContainsString('ignored.txt', $rendered);
+
+        $full = $manager->renderFull();
+        $this->assertStringContainsString('## Introduction to RankForge', $full);
+        $this->assertStringContainsString('Source: https://example.com/docs/intro.md', $full);
+        $this->assertStringContainsString('This is the introductory guide for RankForge.', $full);
+        $this->assertStringContainsString('## configuration', $full);
+        $this->assertStringContainsString('Source: https://example.com/docs/nested/configuration.markdown', $full);
+
+        // Cleanup
+        @unlink($tempDir.'/intro.md');
+        @unlink($tempDir.'/nested/configuration.markdown');
+        @unlink($tempDir.'/nested/ignored.txt');
+        @rmdir($tempDir.'/nested');
+        @rmdir($tempDir);
+    }
 }

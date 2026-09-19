@@ -101,19 +101,17 @@ class Sanitizer
     }
 
     /**
-     * Remove specific query parameters from a URL.
+     * Filter query parameters in a URL based on a whitelist or blacklist (strip list).
      *
-     * Useful for stripping tracking parameters (UTM, fbclid, gclid) from
-     * canonical URLs to prevent duplicate content issues.
+     * If $whitelistParams is provided and non-empty, ONLY keep query params matching the whitelist.
+     * If $whitelistParams is empty and $stripParams is provided, remove params matching the strip list.
+     * Supports wildcards like 'utm_*'.
      *
-     * @param  string[]  $params  Parameter names to strip.
+     * @param  string[]  $stripParams
+     * @param  string[]  $whitelistParams
      */
-    public static function stripQueryParams(string $url, array $params): string
+    public static function filterQueryParams(string $url, array $stripParams = [], array $whitelistParams = []): string
     {
-        if ($params === []) {
-            return $url;
-        }
-
         $parsed = parse_url($url);
 
         if ($parsed === false || ! isset($parsed['query'])) {
@@ -122,8 +120,26 @@ class Sanitizer
 
         parse_str($parsed['query'], $queryArray);
 
-        foreach ($params as $param) {
-            unset($queryArray[$param]);
+        if ($whitelistParams !== []) {
+            $filtered = [];
+            foreach ($queryArray as $key => $value) {
+                foreach ($whitelistParams as $allowed) {
+                    if ($key === $allowed || fnmatch($allowed, (string) $key)) {
+                        $filtered[$key] = $value;
+                        break;
+                    }
+                }
+            }
+            $queryArray = $filtered;
+        } elseif ($stripParams !== []) {
+            foreach (array_keys($queryArray) as $key) {
+                foreach ($stripParams as $strip) {
+                    if ($key === $strip || fnmatch($strip, (string) $key)) {
+                        unset($queryArray[$key]);
+                        break;
+                    }
+                }
+            }
         }
 
         // Rebuild the URL
@@ -135,6 +151,19 @@ class Sanitizer
         $fragment = isset($parsed['fragment']) ? '#'.$parsed['fragment'] : '';
 
         return $scheme.$host.$port.$path.$query.$fragment;
+    }
+
+    /**
+     * Remove specific query parameters from a URL.
+     *
+     * Useful for stripping tracking parameters (UTM, fbclid, gclid) from
+     * canonical URLs to prevent duplicate content issues.
+     *
+     * @param  string[]  $params  Parameter names to strip.
+     */
+    public static function stripQueryParams(string $url, array $params): string
+    {
+        return self::filterQueryParams($url, $params);
     }
 
     /**

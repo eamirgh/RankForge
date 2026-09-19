@@ -29,6 +29,35 @@ class CanonicalTest extends TestCase
         $this->assertEquals('https://example.com/blog/my-post?keep=1', $manager->getCanonicalUrl());
     }
 
+    public function test_it_supports_whitelist_query_params(): void
+    {
+        $manager = new RankForgeManager([
+            'canonical' => [
+                'enabled' => true,
+                'whitelist_query_params' => ['page', 'category'],
+                'strip_query_params' => ['utm_*'],
+            ],
+        ]);
+
+        $manager->canonical('https://example.com/blog?page=2&category=tech&utm_source=twitter&other=ignored');
+
+        $this->assertEquals('https://example.com/blog?page=2&category=tech', $manager->getCanonicalUrl());
+    }
+
+    public function test_it_supports_wildcards_in_strip_query_params(): void
+    {
+        $manager = new RankForgeManager([
+            'canonical' => [
+                'enabled' => true,
+                'strip_query_params' => ['utm_*', 'fbclid'],
+            ],
+        ]);
+
+        $manager->canonical('https://example.com/blog?utm_source=google&utm_campaign=winter&keep=yes&fbclid=123');
+
+        $this->assertEquals('https://example.com/blog?keep=yes', $manager->getCanonicalUrl());
+    }
+
     public function test_it_enforces_trailing_slash_configuration(): void
     {
         $manager = new RankForgeManager([

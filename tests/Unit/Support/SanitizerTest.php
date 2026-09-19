@@ -52,6 +52,23 @@ class SanitizerTest extends TestCase
         $this->assertEquals('https://example.com/page', $allStripped);
     }
 
+    public function test_it_filters_query_params_with_whitelist_and_wildcard_blacklist(): void
+    {
+        $url = 'https://example.com/page?page=2&sort=desc&utm_source=google&utm_campaign=spring&fbclid=abc';
+
+        // Whitelist keeps only specified params
+        $whitelisted = Sanitizer::filterQueryParams($url, [], ['page', 'sort']);
+        $this->assertEquals('https://example.com/page?page=2&sort=desc', $whitelisted);
+
+        // Blacklist with wildcard strips matching params
+        $strippedWildcard = Sanitizer::filterQueryParams($url, ['utm_*', 'fbclid']);
+        $this->assertEquals('https://example.com/page?page=2&sort=desc', $strippedWildcard);
+
+        // Whitelist takes precedence over stripParams when non-empty
+        $whitelistPrecedence = Sanitizer::filterQueryParams($url, ['page'], ['page', 'sort']);
+        $this->assertEquals('https://example.com/page?page=2&sort=desc', $whitelistPrecedence);
+    }
+
     public function test_it_escapes_attributes_for_html(): void
     {
         $escaped = Sanitizer::escapeAttribute('Title with "quotes" and <tags> & ampersands');

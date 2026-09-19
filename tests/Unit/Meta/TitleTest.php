@@ -100,4 +100,25 @@ class TitleTest extends TestCase
         $html = $manager->renderHead();
         $this->assertStringContainsString('<title>News alert(1) | Acme &amp; Co</title>', $html);
     }
+
+    public function test_it_detects_title_truncation_warning(): void
+    {
+        $manager = new RankForgeManager([
+            'title' => [
+                'max_length' => 60,
+            ],
+        ]);
+
+        $shortTitle = 'Short Title';
+        $manager->title($shortTitle);
+        $this->assertFalse($manager->hasTitleWarning());
+        $this->assertNull($manager->getTitleWarning());
+
+        $longTitle = str_repeat('A', 61);
+        $manager->title($longTitle);
+        $this->assertTrue($manager->hasTitleWarning());
+        $this->assertNotNull($manager->getTitleWarning());
+        $this->assertStringContainsString('60', $manager->getTitleWarning());
+        $this->assertStringContainsString('61', $manager->getTitleWarning());
+    }
 }

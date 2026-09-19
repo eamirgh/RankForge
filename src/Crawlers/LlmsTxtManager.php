@@ -107,6 +107,77 @@ class LlmsTxtManager
         return $this;
     }
 
+    public function addDirectory(string $path, ?string $prefixUrl = null, string $section = 'Documentation'): static
+    {
+        if (! is_dir($path)) {
+            return $this;
+        }
+
+        $iterator = new \RecursiveIteratorIterator(
+            new \RecursiveDirectoryIterator($path, \FilesystemIterator::SKIP_DOTS)
+        );
+
+        $files = [];
+        foreach ($iterator as $fileInfo) {
+            if ($fileInfo->isFile()) {
+                $ext = strtolower($fileInfo->getExtension());
+                if (in_array($ext, ['md', 'markdown'], true)) {
+                    $files[] = $fileInfo->getPathname();
+                }
+            }
+        }
+
+        sort($files);
+
+        $realBasePath = realpath($path) ?: $path;
+        $realBasePath = rtrim(str_replace('\\', '/', $realBasePath), '/');
+
+        foreach ($files as $filePath) {
+            $content = (string) file_get_contents($filePath);
+            $realFilePath = str_replace('\\', '/', realpath($filePath) ?: $filePath);
+
+            if (str_starts_with($realFilePath, $realBasePath)) {
+                $rel = ltrim(substr($realFilePath, strlen($realBasePath)), '/');
+            } else {
+                $rel = basename($filePath);
+            }
+
+            $url = $prefixUrl !== null
+                ? rtrim($prefixUrl, '/').'/'.ltrim($rel, '/')
+                : $rel;
+
+            // Extract title: from `# Title` or first heading, or filename
+            $title = null;
+            if (preg_match('/^#+\s+(.+)$/m', $content, $headingMatch)) {
+                $title = trim($headingMatch[1]);
+            }
+            if (empty($title)) {
+                $title = pathinfo($filePath, PATHINFO_FILENAME);
+            }
+
+            // Extract description: from first paragraph or excerpt
+            $body = preg_replace('/^---\s*[\r\n].*?[\r\n]---\s*[\r\n]/s', '', $content);
+            $paragraphs = preg_split('/\n\s*\n/', (string) $body);
+            $description = null;
+
+            if (is_array($paragraphs)) {
+                foreach ($paragraphs as $paragraph) {
+                    $p = trim($paragraph);
+                    if ($p === '' || str_starts_with($p, '#') || str_starts_with($p, '```')) {
+                        continue;
+                    }
+                    $description = trim((string) preg_replace('/\s+/', ' ', $p));
+                    break;
+                }
+            }
+
+            $this->addLink($section, $title, $url, $description);
+            $this->addDocument($title, $content, $url);
+        }
+
+        return $this;
+    }
+
     public function render(): string
     {
         $lines = [];
