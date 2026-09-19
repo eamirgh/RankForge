@@ -73,6 +73,7 @@ class RankForgeServiceProvider extends ServiceProvider
                 PingSitemapCommand::class,
                 GenerateLlmsCommand::class,
                 HealthCheckCommand::class,
+                \Eamirgh\RankForge\Commands\McpCommand::class,
             ]);
         }
     }

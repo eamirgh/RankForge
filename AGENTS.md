@@ -143,6 +143,7 @@ Every new feature or modified behavior **must** be reflected in `docs/`:
    - Sitemaps & IndexNow -> `docs/guide/xml-sitemaps.md`
    - Robots & LLMs.txt -> `docs/guide/crawlers-and-llms-txt.md`
    - Commands -> `docs/guide/artisan-commands.md`
+   - MCP Server -> `docs/guide/mcp-server.md`
    - Headless / Inertia -> `docs/advanced/headless-and-inertia.md`
    - Model Integration -> `docs/advanced/model-integration.md`
 2. **If adding a new page**:
@@ -166,6 +167,7 @@ Every new feature or modified behavior **must** be reflected in `docs/`:
 | `make test-unit` | Runs only unit tests (`tests/Unit`) |
 | `make test-feature` | Runs only feature tests (`tests/Feature`) |
 | `make benchmark` | Runs local performance benchmark suite (`benchmarks/benchmark.php`) |
+| `make mcp` | Starts the RankForge MCP server over stdio |
 | `make docs-dev` | Starts local VitePress development server |
 | `make docs-build` | Builds production-ready VitePress static documentation |
 | `make docs-preview` | Previews built VitePress documentation locally |

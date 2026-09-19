@@ -19,6 +19,9 @@ test-feature: ## Run only feature tests
 benchmark: ## Run the local performance benchmark suite
 	php benchmarks/benchmark.php
 
+mcp: ## Start the RankForge MCP server over stdio
+	php artisan rankforge:mcp
+
 docs-dev: ## Start VitePress documentation development server
 	npm run docs:dev
 

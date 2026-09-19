@@ -25,6 +25,7 @@ export default defineConfig({
       { text: 'JSON-LD', link: '/guide/json-ld-schemas' },
       { text: 'Sitemaps', link: '/guide/xml-sitemaps' },
       { text: 'LLMs.txt & GEO', link: '/guide/crawlers-and-llms-txt' },
+      { text: 'MCP Server', link: '/guide/mcp-server' },
       {
         text: 'v1.x',
         items: [
@@ -50,6 +51,7 @@ export default defineConfig({
           { text: 'JSON-LD Structured Data', link: '/guide/json-ld-schemas' },
           { text: 'XML Sitemaps & IndexNow', link: '/guide/xml-sitemaps' },
           { text: 'Robots.txt & LLMs.txt (GEO)', link: '/guide/crawlers-and-llms-txt' },
+          { text: 'Model Context Protocol (MCP)', link: '/guide/mcp-server' },
         ],
       },
       {
