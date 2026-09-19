@@ -146,7 +146,7 @@ RankForge::ogTitle('RankForge v1.0 Released')
     ->ogLocaleAlternate(['es_ES', 'fr_FR', 'de_DE'])
     ->articlePublishedTime(now()->subHours(4))
     ->articleModifiedTime(now())
-    ->articleAuthor(['Amir Ghafoori', 'Laravel Team'])
+    ->articleAuthor(['Amir Ghaffari', 'Laravel Team'])
     ->articleSection('Announcements')
     ->articleTags(['laravel', 'release', 'seo']);
 ```

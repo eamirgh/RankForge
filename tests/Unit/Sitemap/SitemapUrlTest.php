@@ -11,7 +11,7 @@ class SitemapUrlTest extends TestCase
 {
     public function test_it_builds_sitemap_url_with_all_properties_and_xml(): void
     {
-        $date = new DateTimeImmutable('2025-01-15T10:30:00+00:00');
+        $date = new DateTimeImmutable('2026-01-15T10:30:00+00:00');
 
         $url = SitemapUrl::make('https://example.com/posts/hello-world')
             ->lastmod($date)
@@ -25,7 +25,7 @@ class SitemapUrlTest extends TestCase
         $xml = $url->toXml();
 
         $this->assertStringContainsString('<loc>https://example.com/posts/hello-world</loc>', $xml);
-        $this->assertStringContainsString('<lastmod>2025-01-15T10:30:00+00:00</lastmod>', $xml);
+        $this->assertStringContainsString('<lastmod>2026-01-15T10:30:00+00:00</lastmod>', $xml);
         $this->assertStringContainsString('<changefreq>daily</changefreq>', $xml);
         $this->assertStringContainsString('<priority>0.8</priority>', $xml);
         $this->assertStringContainsString('<image:loc>https://example.com/images/hero.jpg</image:loc>', $xml);

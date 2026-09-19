@@ -73,7 +73,7 @@ class BenchmarkRunner
                 ->ogImage("https://example.com/images/{$i}.jpg", 1200, 630, "Banner {$i}")
                 ->twitterCard('summary_large_image')
                 ->twitterSite('@acme')
-                ->articlePublishedTime('2025-01-01T00:00:00Z');
+                ->articlePublishedTime('2026-01-01T00:00:00Z');
 
             $html = $manager->renderHead();
         }
@@ -145,7 +145,7 @@ class BenchmarkRunner
         $manager->register('large_catalog', function () use ($urlCount) {
             for ($i = 1; $i <= $urlCount; $i++) {
                 yield SitemapUrl::make("https://example.com/items/{$i}")
-                    ->lastmod('2025-01-01')
+                    ->lastmod('2026-01-01')
                     ->changefreq('daily')
                     ->priority(0.8)
                     ->image("https://example.com/img/{$i}.jpg", "Item {$i}");
@@ -177,7 +177,7 @@ class BenchmarkRunner
             . '<ul><li>Item 1</li><li>Item 2</li><li>Item 3</li></ul>'
             . '<pre><code>composer require eamirgh/rankforge</code></pre>'
             . '</article></main>'
-            . '<footer><p>&copy; 2025 Acme Inc. All rights reserved.</p></footer>'
+            . '<footer><p>&copy; 2026 Acme Inc. All rights reserved.</p></footer>'
             . '</body></html>';
 
         $startMemory = memory_get_usage(true);

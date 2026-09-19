@@ -22,7 +22,7 @@ class ContentTransformerTest extends TestCase
         </ul>
         <p>Visit <a href="https://example.com">Example</a> or check <img src="/logo.png" alt="Company Logo" />.</p>
         <pre><code>echo "hello world";</code></pre>
-        <footer><p>&copy; 2025</p></footer>
+        <footer><p>&copy; 2026</p></footer>
 HTML;
 
         $markdown = ContentTransformer::toMarkdown($html);

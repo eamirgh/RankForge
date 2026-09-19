@@ -99,9 +99,9 @@ RankForge::jsonLd(
             'https://example.com/images/cover-4x3.jpg',
             'https://example.com/images/cover-1x1.jpg',
         ])
-        ->datePublished('2025-01-15T08:00:00+00:00')
-        ->dateModified('2025-01-20T14:30:00+00:00')
-        ->author('Amir Ghafoori')
+        ->datePublished('2026-01-15T08:00:00+00:00')
+        ->dateModified('2026-01-20T14:30:00+00:00')
+        ->author('Amir Ghaffari')
         ->publisher(
             Organization::make()
                 ->name('Tech Daily')

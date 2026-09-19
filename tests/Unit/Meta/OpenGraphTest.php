@@ -80,17 +80,17 @@ class OpenGraphTest extends TestCase
             'open_graph' => ['enabled' => true],
         ]);
 
-        $date = new DateTimeImmutable('2025-01-15T12:00:00Z');
+        $date = new DateTimeImmutable('2026-01-15T12:00:00Z');
 
         $manager->articlePublishedTime($date)
-            ->articleModifiedTime('2025-01-16T12:00:00Z')
+            ->articleModifiedTime('2026-01-16T12:00:00Z')
             ->articleAuthor(['Alice', 'Bob'])
             ->articleSection('Technology')
             ->articleTags(['php', 'laravel']);
 
         $html = $manager->renderHead();
-        $this->assertStringContainsString('<meta property="article:published_time" content="2025-01-15T12:00:00+00:00">', $html);
-        $this->assertStringContainsString('<meta property="article:modified_time" content="2025-01-16T12:00:00Z">', $html);
+        $this->assertStringContainsString('<meta property="article:published_time" content="2026-01-15T12:00:00+00:00">', $html);
+        $this->assertStringContainsString('<meta property="article:modified_time" content="2026-01-16T12:00:00Z">', $html);
         $this->assertStringContainsString('<meta property="article:author" content="Alice">', $html);
         $this->assertStringContainsString('<meta property="article:author" content="Bob">', $html);
         $this->assertStringContainsString('<meta property="article:section" content="Technology">', $html);

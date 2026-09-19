@@ -13,7 +13,7 @@ class ArticleSchemaTest extends TestCase
 {
     public function test_it_generates_article_schema_with_all_properties(): void
     {
-        $date = new DateTimeImmutable('2025-02-01T10:00:00Z');
+        $date = new DateTimeImmutable('2026-02-01T10:00:00Z');
 
         $article = Article::make()
             ->headline('Breaking News')

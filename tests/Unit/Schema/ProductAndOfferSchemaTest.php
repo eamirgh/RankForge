@@ -50,10 +50,10 @@ class ProductAndOfferSchemaTest extends TestCase
     {
         $offer = Offer::make()
             ->price(19.99)
-            ->priceValidUntil('2025-12-31');
+            ->priceValidUntil('2026-12-31');
 
         $array = $offer->toArray();
         $this->assertEquals(19.99, $array['price']);
-        $this->assertEquals('2025-12-31', $array['priceValidUntil']);
+        $this->assertEquals('2026-12-31', $array['priceValidUntil']);
     }
 }

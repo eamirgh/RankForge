@@ -303,7 +303,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-08-10T19:31:58+00:00"
+            "time": "2026-08-10T19:31:58+00:00"
         },
         {
             "name": "doctrine/lexer",
@@ -444,7 +444,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-10-31T18:51:33+00:00"
+            "time": "2026-10-31T18:51:33+00:00"
         },
         {
             "name": "egulias/email-validator",
@@ -511,7 +511,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-03-06T22:45:56+00:00"
+            "time": "2026-03-06T22:45:56+00:00"
         },
         {
             "name": "fruitcake/php-cors",
@@ -582,7 +582,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-12-03T09:33:47+00:00"
+            "time": "2026-12-03T09:33:47+00:00"
         },
         {
             "name": "graham-campbell/result-type",
@@ -3024,7 +3024,7 @@
                 "issues": "https://github.com/ramsey/collection/issues",
                 "source": "https://github.com/ramsey/collection/tree/2.1.1"
             },
-            "time": "2025-03-22T05:38:12+00:00"
+            "time": "2026-03-22T05:38:12+00:00"
         },
         {
             "name": "ramsey/uuid",
@@ -5658,7 +5658,7 @@
                 "issues": "https://github.com/tijsverkoyen/CssToInlineStyles/issues",
                 "source": "https://github.com/tijsverkoyen/CssToInlineStyles/tree/v2.4.0"
             },
-            "time": "2025-12-02T11:56:42+00:00"
+            "time": "2026-12-02T11:56:42+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -5988,7 +5988,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-08-20T19:15:30+00:00"
+            "time": "2026-08-20T19:15:30+00:00"
         },
         {
             "name": "doctrine/deprecations",
@@ -6160,7 +6160,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-08-14T07:29:31+00:00"
+            "time": "2026-08-14T07:29:31+00:00"
         },
         {
             "name": "filp/whoops",
@@ -6346,7 +6346,7 @@
                 "issues": "https://github.com/Jean85/pretty-package-versions/issues",
                 "source": "https://github.com/Jean85/pretty-package-versions/tree/2.1.1"
             },
-            "time": "2025-03-19T14:43:43+00:00"
+            "time": "2026-03-19T14:43:43+00:00"
         },
         {
             "name": "laravel/pail",
@@ -7458,7 +7458,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-04-16T22:59:48+00:00"
+            "time": "2026-04-16T22:59:48+00:00"
         },
         {
             "name": "pestphp/pest-plugin-laravel",
@@ -7532,7 +7532,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-04-21T07:40:53+00:00"
+            "time": "2026-04-21T07:40:53+00:00"
         },
         {
             "name": "pestphp/pest-plugin-mutate",
@@ -8035,7 +8035,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-12-24T07:01:01+00:00"
+            "time": "2026-12-24T07:01:01+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -8579,7 +8579,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-03-19T07:56:08+00:00"
+            "time": "2026-03-19T07:56:08+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
@@ -8928,7 +8928,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-05-21T11:55:47+00:00"
+            "time": "2026-05-21T11:55:47+00:00"
         },
         {
             "name": "sebastian/exporter",
@@ -9018,7 +9018,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-09-24T06:12:51+00:00"
+            "time": "2026-09-24T06:12:51+00:00"
         },
         {
             "name": "sebastian/global-state",
@@ -9328,7 +9328,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-08-13T04:42:22+00:00"
+            "time": "2026-08-13T04:42:22+00:00"
         },
         {
             "name": "sebastian/type",
@@ -9397,7 +9397,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-08-09T06:55:48+00:00"
+            "time": "2026-08-09T06:55:48+00:00"
         },
         {
             "name": "sebastian/version",
@@ -9688,7 +9688,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-11-17T20:03:58+00:00"
+            "time": "2026-11-17T20:03:58+00:00"
         },
         {
             "name": "webmozart/assert",
