@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/eamirgh/rankforge/main/docs/public/logo.svg" alt="RankForge Logo" width="120" height="120">
+  <img src="docs/public/logo.svg" alt="RankForge Logo" width="128" height="128">
 </p>
 
 <h1 align="center">RankForge</h1>
@@ -10,11 +10,12 @@
 
 <p align="center">
   <a href="https://packagist.org/packages/eamirgh/rankforge"><img src="https://img.shields.io/packagist/v/eamirgh/rankforge.svg?style=flat-square" alt="Latest Version on Packagist"></a>
+  <a href="https://packagist.org/packages/eamirgh/rankforge"><img src="https://img.shields.io/badge/laravel-11.x%20%7C%2012.x%20%7C%2013.x-red.svg?style=flat-square" alt="Laravel Versions"></a>
+  <a href="https://packagist.org/packages/eamirgh/rankforge"><img src="https://img.shields.io/packagist/php-v/eamirgh/rankforge.svg?style=flat-square" alt="PHP Version"></a>
   <a href="https://github.com/eamirgh/rankforge/actions/workflows/tests.yml"><img src="https://img.shields.io/github/actions/workflow/status/eamirgh/rankforge/tests.yml?branch=main&label=tests&style=flat-square" alt="Tests Status"></a>
   <a href="https://codecov.io/gh/eamirgh/rankforge"><img src="https://img.shields.io/codecov/c/github/eamirgh/rankforge/main.svg?style=flat-square" alt="Coverage Status"></a>
   <a href="https://eamirgh.github.io/RankForge"><img src="https://img.shields.io/badge/docs-eamirgh.github.io%2FRankForge-blue.svg?style=flat-square" alt="Documentation"></a>
   <a href="https://packagist.org/packages/eamirgh/rankforge"><img src="https://img.shields.io/packagist/dt/eamirgh/rankforge.svg?style=flat-square" alt="Total Downloads"></a>
-  <a href="https://packagist.org/packages/eamirgh/rankforge"><img src="https://img.shields.io/packagist/php-v/eamirgh/rankforge.svg?style=flat-square" alt="PHP Version"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="License"></a>
 </p>
 
