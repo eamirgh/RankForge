@@ -7,9 +7,12 @@ export default defineConfig({
   lastUpdated: true,
   cleanUrls: true,
 
+  // GitHub Pages base URL: /rankforge/ when on github.io/rankforge
+  base: process.env.BASE_PATH || '/rankforge/',
+
   head: [
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }],
-    ['meta', { name: 'theme-color', content: '#3eaf7c' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/rankforge/logo.svg' }],
+    ['meta', { name: 'theme-color', content: '#2563eb' }],
   ],
 
   themeConfig: {

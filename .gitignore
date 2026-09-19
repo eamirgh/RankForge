@@ -9,5 +9,7 @@ node_modules/
 .DS_Store
 .idea/
 .vscode/
-docs/.vitepress/dist
-docs/.vitepress/cache
+# VitePress
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+docs/.vitepress/.temp/
