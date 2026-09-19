@@ -1,0 +1,50 @@
+{
+    "name": "rankforge/rankforge",
+    "description": "Enterprise-grade SEO & GEO engine for Laravel — meta tags, JSON-LD, sitemaps, robots.txt, and llms.txt",
+    "keywords": ["laravel", "seo", "meta-tags", "json-ld", "sitemap", "robots-txt", "llms-txt", "open-graph", "structured-data", "geo"],
+    "license": "MIT",
+    "type": "library",
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^11.0|^12.0|^13.0",
+        "illuminate/http": "^11.0|^12.0|^13.0",
+        "illuminate/routing": "^11.0|^12.0|^13.0",
+        "illuminate/view": "^11.0|^12.0|^13.0",
+        "illuminate/console": "^11.0|^12.0|^13.0",
+        "illuminate/cache": "^11.0|^12.0|^13.0",
+        "illuminate/filesystem": "^11.0|^12.0|^13.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0|^10.0|^11.0",
+        "pestphp/pest": "^3.0",
+        "pestphp/pest-plugin-laravel": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "RankForge\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "RankForge\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "RankForge\\RankForgeServiceProvider"
+            ],
+            "aliases": {
+                "RankForge": "RankForge\\Facades\\RankForge"
+            }
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
