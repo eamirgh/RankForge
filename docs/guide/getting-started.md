@@ -148,3 +148,11 @@ Route::get('/pricing', function () {
     return view('pricing');
 })->name('pricing');
 ```
+
+---
+
+## Example Application
+
+A complete demo application showcasing RankForge with dynamic meta tags, JSON-LD schemas, XML sitemaps, `llms.txt`, and MCP is available on GitHub:
+
+👉 **[eamirgh/rankforge-blog-example](https://github.com/eamirgh/rankforge-blog-example)**

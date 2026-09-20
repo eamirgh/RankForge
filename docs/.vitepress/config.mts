@@ -31,6 +31,7 @@ export default defineConfig({
         items: [
           { text: 'Changelog', link: 'https://github.com/eamirgh/rankforge/releases' },
           { text: 'Contributing', link: 'https://github.com/eamirgh/rankforge' },
+          { text: 'Example App', link: 'https://github.com/eamirgh/rankforge-blog-example' },
         ],
       },
     ],

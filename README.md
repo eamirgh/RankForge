@@ -151,6 +151,14 @@ public function show(Post $post): View
 
 ---
 
+## Example Application
+
+Explore a complete, production-ready Laravel application implementing RankForge (dynamic meta tags, Schema.org JSON-LD, XML sitemaps, `llms.txt`, and MCP):
+
+👉 **[github.com/eamirgh/rankforge-blog-example](https://github.com/eamirgh/rankforge-blog-example)**
+
+---
+
 ## Detailed Features
 
 ### 1. Dynamic Meta Tags Engine
